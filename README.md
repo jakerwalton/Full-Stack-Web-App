@@ -12,4 +12,4 @@ Trello:
 https://trello.com/invite/b/34rwXFuh/b901cf9b739e98e22278168eb131753f/full-stack-web-application
 
 Wireframe:
-https://www.figma.com/file/6YQEQOAvLoA0AzgtZqPWA8/Untitled?node-id=0%3A1
+https://lh3.googleusercontent.com/Y6qKrTEoGLpqwJuIHL3c6D6kMglu0nfu-NHlp40-RK8qclqYehjR81GReCLSO9t2A6iVhuzQ1AlEwNE9pwLDAZLCZUbZntrO2jNJB--ZOP-02ozh29ctq8TpJr0cTaBTvRvtom4-=w2400
