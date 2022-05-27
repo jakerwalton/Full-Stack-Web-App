@@ -11,5 +11,5 @@ Create simple application similar to Pinterest (Cannot think of creative name at
 Trello:
 https://trello.com/invite/b/34rwXFuh/b901cf9b739e98e22278168eb131753f/full-stack-web-application
 
-Wireframe:
-https://lh3.googleusercontent.com/Y6qKrTEoGLpqwJuIHL3c6D6kMglu0nfu-NHlp40-RK8qclqYehjR81GReCLSO9t2A6iVhuzQ1AlEwNE9pwLDAZLCZUbZntrO2jNJB--ZOP-02ozh29ctq8TpJr0cTaBTvRvtom4-=w2400
+![Wireframe]("https://lh3.googleusercontent.com/Y6qKrTEoGLpqwJuIHL3c6D6kMglu0nfu-NHlp40-RK8qclqYehjR81GReCLSO9t2A6iVhuzQ1AlEwNE9pwLDAZLCZUbZntrO2jNJB--ZOP-02ozh29ctq8TpJr0cTaBTvRvtom4-=w2400")
+
