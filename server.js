@@ -16,9 +16,6 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 // Middleware
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: false }));
-// const articlesController = require("./controllers/articles")
-// app.use('/authors', authorsController);
-// app.use('/articles', articlesController);
 
 app.get('/', (req, res) => {
     res.render("index.ejs");
