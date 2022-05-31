@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.3.5"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "full-stack-web-app",
+  "description": "# Project Create simple application similar to Pinterest (Cannot think of creative name atm),",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jakerwalton/Full-Stack-Web-App.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jakerwalton/Full-Stack-Web-App/issues"
+  },
+  "homepage": "https://github.com/jakerwalton/Full-Stack-Web-App#readme"
+}
