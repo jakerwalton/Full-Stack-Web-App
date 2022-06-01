@@ -4,21 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ImageNation</title>
+    <title></title>
   </head>
   <body>
-    <h1>ImageNation</h1>
+    <h1>Placeholder Name</h1>
     <main>
-      <img src="https://picsum.photos/200/300?random=1" alt="Random pic" />
-      <img src="https://picsum.photos/200/300?random=2" alt="Random pic" />
-      <img src="https://picsum.photos/200/300?random=3" alt="Random pic" />
-      <img src="https://picsum.photos/200/300?random=4" alt="Random pic" />
-      <img src="https://picsum.photos/200/300?random=5" alt="Random pic" />
-      <img src="https://picsum.photos/200/300?random=6" alt="Random pic" />
-      <img src="https://picsum.photos/200/300?random=7" alt="Random pic" />
-      <img src="https://picsum.photos/200/300?random=8" alt="Random pic" />
-      <img src="https://picsum.photos/200/300?random=9" alt="Random pic" />
-      <img src="https://picsum.photos/200/300?random=10" alt="Random pic" />
+      <%for (let i = 0; i < 30; i++) { %>
+        <%let randomNum = Math.floor(Math.random()*1084);%>
+        <a href="/comments/<%=randomNum%>">
+          <img src="https://picsum.photos/id/<%=randomNum%>/200/300?random=<%=randomNum%>" alt="Broken Link"/>
+        </a>
+      <% } %>
     </main>
   </body>
 </html>

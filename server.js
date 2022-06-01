@@ -16,9 +16,14 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 // Middleware
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: false }));
+const commentsController = require('./controllers/comments');
+app.use('/comments', commentsController);
 
+
+// ==================== INDEX ====================
 app.get('/', (req, res) => {
-    res.render("index.ejs");
+        res.render('index.ejs', {
+    });
 });
 
 app.listen(process.env.PORT, () => {
