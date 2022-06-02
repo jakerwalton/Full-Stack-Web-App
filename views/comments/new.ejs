@@ -7,8 +7,8 @@
     <title></title>
 </head>
 <body>
-    <img src="https://picsum.photos/id/<%=id%>/200/300" alt="Picture">
-    <form action="/comments" method="post">
+    <img src="https://picsum.photos/id/<%=id%>/200/300" alt="">
+    <form action="/<%=id%>" method="POST">
         <input type="text" name="body" placeholder="Type Comment">
         <input type="submit" value="Post Comment">
     </form>

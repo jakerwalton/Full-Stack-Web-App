@@ -6,31 +6,33 @@ const Comment = require('../models/comments.js');
 // Index route is on main server.js
 
 // ==================== NEW ====================
-router.get('/new', (req, res) => {
-    res.render("comments/new.ejs");
+router.get('/:id/new', (req, res) => {
+    res.render("comments/new.ejs", {
+        id: req.params.id
+    });
 });
 
 
 // ==================== DELETE ====================
 router.delete('/:id', (req, res) => {
     Comment.findByIdAndDelete(req.params.id, () => {
-        res.redirect('/comments');
+        res.redirect('/');
     });
 });
 
 
 // ==================== UPDATE ====================
-router.put('/:id', (req, res) => {
-    Comment.findByIdAndUpdate(req.params.id, req.body, () => {
-        res.redirect('/comments');
+router.put('/', (req, res) => {
+    Comment.findByIdAndUpdate(req.params.id, req.body, (err, updateComments) => {
+        res.redirect('/:id');
     });
 });
 
 
 // ==================== CREATE ====================
-router.post('/', (req, res) => {
+router.post('/:id', (req, res) => {
     Comment.create(req.body, (err, createdComment) => {
-        res.redirect("/comments");
+        res.redirect(`/${req.params.id}`);
     });
 });
 
@@ -39,7 +41,8 @@ router.post('/', (req, res) => {
 router.get('/:id/edit', (req, res) => {
     Comment.findById(req.params.id, (err, foundComment) => {
         res.render('comments/edit.ejs', {
-            comment: foundComment
+            comment: foundComment,
+            id: req.params.id
         });
     });
 });
@@ -48,6 +51,7 @@ router.get('/:id/edit', (req, res) => {
 router.get('/:id', (req, res) => {
     Comment.findById(req.params.id, (err, foundComment) => {
         res.render('comments/show.ejs', {
+            exist: "yes",
             comment: foundComment,
             id: req.params.id
         });
