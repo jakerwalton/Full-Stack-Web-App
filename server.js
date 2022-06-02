@@ -2,6 +2,8 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 const express = require('express');
 const methodOverride = require("method-override");
+const path = require('path')
+const favicon = require('serve-favicon')
 const app = express();
 
 const MONGODB_URI = process.env.MONGODB_URI
@@ -17,8 +19,9 @@ db.on('connected', () => console.log('mongo connected'));
 db.on('disconnected', () => console.log('mongo disconnected'));
 
 // Middleware
-app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride('_method'));
+app.use(express.static(__dirname + '/public'));
 const imagesController = require('./controllers/comments');
 app.use(imagesController);
 

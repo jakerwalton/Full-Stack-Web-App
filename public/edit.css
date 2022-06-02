@@ -1,0 +1,11 @@
+h1 {
+    background-color: rgb(220, 37, 37);
+}
+#title {
+    text-align: center;
+    background-color: rgb(220, 37, 37);
+    color: white;
+    font-family: cursive;
+    letter-spacing: 0px;
+    font-size: 40px;
+}

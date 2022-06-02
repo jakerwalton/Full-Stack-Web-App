@@ -4,15 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="/index.css">
     <title></title>
   </head>
   <body>
-    <h1>Pictrest</h1>
+    <h1 id="title">Imagen</h1>
+    <button id="rfsh" onClick="window.location.reload();">REFRESH</button>
     <main>
       <%for (let i = 0; i < 30; i++) { %>
         <%let randomNum = Math.floor(Math.random()*1084);%>
         <a href="/<%=randomNum%>">
-          <img src="https://picsum.photos/id/<%=randomNum%>/200/300?random=<%=randomNum%>" />
+          <img id="images" src="https://picsum.photos/id/<%=randomNum%>/200/300?random=<%=randomNum%>" alt="" width="200px" height="300px" />
         </a>
       <% } %>
     </main>

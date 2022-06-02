@@ -14,17 +14,17 @@ router.get('/:id/new', (req, res) => {
 
 
 // ==================== DELETE ====================
-router.delete('/:id', (req, res) => {
-    Comment.findByIdAndDelete(req.params.id, () => {
-        res.redirect('/');
+router.delete('/:id/:mongooseId', (req, res) => {
+    Comment.findByIdAndDelete(req.params.mongooseId, () => {
+        res.redirect(`/${req.params.id}`);
     });
 });
 
 
 // ==================== UPDATE ====================
-router.put('/', (req, res) => {
-    Comment.findByIdAndUpdate(req.params.id, req.body, (err, updateComments) => {
-        res.redirect('/:id');
+router.put('/:id/:mongooseId', (req, res) => {
+    Comment.findByIdAndUpdate(req.params.mongooseId, req.body, (err, updateComments) => {
+        res.redirect(`/${req.params.id}`);
     });
 });
 
@@ -38,8 +38,8 @@ router.post('/:id', (req, res) => {
 
 
 // ==================== EDIT ====================
-router.get('/:id/edit', (req, res) => {
-    Comment.findById(req.params.id, (err, foundComment) => {
+router.get('/:id/:mongooseId/edit', (req, res) => {
+    Comment.findById(req.params.mongooseId, (err, foundComment) => {
         res.render('comments/edit.ejs', {
             comment: foundComment,
             id: req.params.id
@@ -49,9 +49,8 @@ router.get('/:id/edit', (req, res) => {
 
 // ==================== SHOW ====================
 router.get('/:id', (req, res) => {
-    Comment.findById(req.params.id, (err, foundComment) => {
+    Comment.find({}, (err, foundComment) => {
         res.render('comments/show.ejs', {
-            exist: "yes",
             comment: foundComment,
             id: req.params.id
         });
