@@ -4,10 +4,11 @@ const express = require('express');
 const methodOverride = require("method-override");
 const app = express();
 
-const MONGODB_URI = process.env.DATABASE_URL
+const MONGODB_URI = process.env.MONGODB_URI
 
 mongoose.connect(MONGODB_URI, {
-    useUnifiedTopology: true,
+    useNewUrlParser: true,
+    useUnifiedTopology: true
 });
 
 db = mongoose.connection;
