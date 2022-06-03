@@ -15,20 +15,26 @@
         <input type="submit" value="HOME">
     </form>
     <img id="image" src="https://picsum.photos/id/<%=id%>/200/300" alt="" width="200px" height="300px"><br/>
+    <main>
         <% for (let i = 0; i < comment.length; i++) { %>
             <% if (comment[i].imageId === parseInt(id)) { %>
-                <p><%=comment[i].body%>
-                    <div class="forms">
-                        <form action="/<%=id%>/<%=comment[i]._id%>/edit"><input type="submit" value="Edit"></form>
-                        <form action="/<%=id%>/<%=comment[i]._id%>?_method=DELETE" method="POST"><input type="submit" value="Delete"></form>
+                <div class="forms">
+                    <p><%=comment[i].body%></p>
+                    <div id="btns">
+                        <form id="edtBtn" action="/<%=id%>/<%=comment[i]._id%>/edit"><input type="submit" value="Edit"></form>
+                        <form id="delBtn" action="/<%=id%>/<%=comment[i]._id%>?_method=DELETE" method="POST"><input type="submit" value="Delete"></form>
                     </div>
-                </p>
+                </div>
             <% } %>
         <% } %>
     <br/>
-    <form action="/<%=id%>/new">
-        <input type="submit" value="New Comment">
+    <form id="commentBox" action="/<%=id%>" method="POST">
+        <input type="text" name="body" placeholder="Type Comment">
+        <input type="submit" value="Post Comment">
+        <input type="text" name="imageId" value="<%=id%>" class="imageId">
     </form>
+
+    </main>
 
 </body>
 </html>

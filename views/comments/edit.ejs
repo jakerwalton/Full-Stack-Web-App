@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="data:,">
-    <link rel="stylesheet" href="/edit.css">
+    <link rel="stylesheet" href="/show.css">
     <title>Document</title>
 </head>
 <body>
@@ -14,10 +14,13 @@
     <form id="homeBtn" action="/">
         <input type="submit" value="HOME">
     </form>
-    <img src="https://picsum.photos/id/<%=id%>/200/300" alt="" width="200px" height="300px">
-    <form action="/<%=id%>/<%=comment._id%>?_method=PUT" method="POST">
-        <input type="text" name="body" value="">
+    <img id="image" src="https://picsum.photos/id/<%=id%>/200/300" alt="" width="200px" height="300px"><br/>
+    <main>
+    <form id="commentBox" action="/<%=id%>/<%=comment._id%>?_method=PUT" method="POST">
+        <input type="text" name="body" value="<%=comment.body%>">
         <input type="submit" value="Confirm Changes">
     </form>
+    </main>
+
 </body>
 </html>
