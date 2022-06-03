@@ -36,10 +36,13 @@ a {
 }
 a:hover {
     filter: brightness(80%);
+    transform: scale(0.5);
 }
 #images {
     border-radius: 10px;
     border-width: 10px;
+    height: 300px;
+    width: 200px;
 }
 #likeBtn {
     background: none;
