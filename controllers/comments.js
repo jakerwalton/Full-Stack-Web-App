@@ -11,32 +11,24 @@ router.get('/:id/new', (req, res) => {
         id: req.params.id
     });
 });
-
-
 // ==================== DELETE ====================
 router.delete('/:id/:mongooseId', (req, res) => {
     Comment.findByIdAndDelete(req.params.mongooseId, () => {
         res.redirect(`/${req.params.id}`);
     });
 });
-
-
 // ==================== UPDATE ====================
 router.put('/:id/:mongooseId', (req, res) => {
     Comment.findByIdAndUpdate(req.params.mongooseId, req.body, (err, updateComments) => {
         res.redirect(`/${req.params.id}`);
     });
 });
-
-
 // ==================== CREATE ====================
 router.post('/:id', (req, res) => {
     Comment.create(req.body, (err, createdComment) => {
         res.redirect(`/${req.params.id}`);
     });
 });
-
-
 // ==================== EDIT ====================
 router.get('/:id/:mongooseId/edit', (req, res) => {
     Comment.findById(req.params.mongooseId, (err, foundComment) => {
@@ -46,7 +38,6 @@ router.get('/:id/:mongooseId/edit', (req, res) => {
         });
     });
 });
-
 // ==================== SHOW ====================
 router.get('/:id', (req, res) => {
     Comment.find({}, (err, foundComment) => {
@@ -56,7 +47,5 @@ router.get('/:id', (req, res) => {
         });
     });
 });
-
-
 
 module.exports = router;
